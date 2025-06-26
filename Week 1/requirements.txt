@@ -1,0 +1,9 @@
+fastapi
+Pillow
+python-multipart
+torch
+transformers
+uvicorn
+nest-asyncio
+pyngrok
+python-dotenv
