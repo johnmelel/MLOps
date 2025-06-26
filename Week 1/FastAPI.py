@@ -4,6 +4,17 @@ from transformers import ViltProcessor, ViltForQuestionAnswering
 import requests
 from PIL import Image
 
+
+import nest_asyncio
+from pyngrok import ngrok
+import uvicorn
+
+
+from typing import Union
+from fastapi import FastAPI, UploadFile
+import io
+from PIL import Image
+
 # Load environment variables from .env
 load_dotenv()
 NGROK_AUTH_TOKEN = os.getenv("NGROK_AUTH_TOKEN")
@@ -47,10 +58,6 @@ def model_pipeline(text: str, image: Image):
 
     return  model.config.id2label[idx]
 
-from typing import Union
-from fastapi import FastAPI, UploadFile
-import io
-from PIL import Image
 
 app = FastAPI()
 
@@ -72,9 +79,6 @@ def ask(text: str, image: UploadFile):
 
 
 
-import nest_asyncio
-from pyngrok import ngrok
-import uvicorn
 
 
 # Start the FastAPI app with ngrok tunnel
