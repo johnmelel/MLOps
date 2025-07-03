@@ -1,0 +1,14 @@
+name: athletes-vcs
+dependencies:
+  - python=3.9
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - tensorflow
+  - tensorflow-privacy
+  - lakefs
+  - dvc
+  - jupyterlab
+  - numpy
+  - awscli
