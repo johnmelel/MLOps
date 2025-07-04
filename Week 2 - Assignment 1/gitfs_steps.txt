@@ -1,0 +1,28 @@
+git init
+git commit -m "chore: init git"
+git lfs track "*.csv"
+git add .gitattributes
+
+git add v1/train.csv v1/test.csv
+git commit -m "data: add v1 split"
+
+git add v2/train.csv v2/test.csv
+git commit -m "data: add v2 split"
+
+git tag v1_split
+git tag v2_split
+
+git remote add origin https://github.com/johnmelel/mlops_assignment1_week2_FS.git
+git push -u origin main
+git push origin v1_split v2_split
+
+git clone https://github.com/your-username/mlops-assignment.git
+cd mlops-assignment
+
+# Restore v1 version of data
+git show v1_split:data/v1/train.csv > train.csv
+git show v1_split:data/v1/test.csv > test.csv
+
+# Restore v2 version of data
+git show v2_split:data/v2/train.csv > train.csv
+git show v2_split:data/v2/test.csv > test.csv
