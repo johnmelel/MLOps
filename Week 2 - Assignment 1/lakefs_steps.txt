@@ -1,0 +1,22 @@
+# set env from private .env file
+$Env:LAKEFS_ENDPOINT         = 
+$Env:LAKEFS_ACCESS_KEY_ID    = 
+$Env:LAKEFS_SECRET_ACCESS_KEY= 
+$Env:AWS_ACCESS_KEY_ID       = 
+$Env:AWS_SECRET_ACCESS_KEY   = 
+
+# switch lakefs on
+.\lakefs.exe run --config .\lakefs-config.yaml
+
+# open new terminal
+.\lakectl.exe repo list
+
+# get v1
+# Download file from a specific branch
+.\lakectl.exe fs download lakefs://mlops-week2/main/data/v1/train.csv  ./data/train.csv
+.\lakectl.exe fs download lakefs://mlops-week2/main/data/v1/test.csv  ./data/test.csv
+
+# get v2
+# Download file from a specific branch
+.\lakectl.exe fs download lakefs://mlops-week2/main/data/v1/train.csv  ./data/train.csv
+.\lakectl.exe fs download lakefs://mlops-week2/main/data/v1/test.csv  ./data/test.csv
