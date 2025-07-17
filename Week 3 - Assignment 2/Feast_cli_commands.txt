@@ -1,0 +1,11 @@
+# Initialize Feast repo (run once)
+feast init athlete_feature_repo
+
+# Navigate into repo directory
+cd athlete_feature_repo
+
+# Register features and entities (apply definitions)
+feast apply
+
+# Materialize features for a time range (loads historical data)
+feast materialize 2023-01-01T00:00:00 2023-01-02T00:00:00
